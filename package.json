@@ -1,0 +1,39 @@
+{
+    "name": "clean-node-api",
+    "version": "1.0.0",
+    "description": "Construindo uma API Rest em NodeJS utilizando TDD, Clean Architecture e Design Patterns.",
+    "author": "Rodrigo Manguinho",
+    "license": "ISC",
+    "main": "src/main/index.js",
+    "scripts": {
+        "start": "node src/main/index.js",
+        "test": "jest --colors --noStackTrace --passWithNoTests --runInBand",
+        "test:unit": "npm test -- --watch -c jest-unit-config.js",
+        "test:integration": "npm test -- --watch -c jest-integration-config.js",
+        "test:staged": "npm test -- --findRelatedTests --silent",
+        "test:ci": "npm test -- --coverage --silent",
+        "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info"
+    },
+    "standard": {
+        "env": [
+            "jest"
+        ]
+    },
+    "devDependencies": {
+        "@shelf/jest-mongodb": "^1.1.3",
+        "coveralls": "^3.0.11",
+        "husky": "^4.0.0-beta.5",
+        "jest": "^27.5.0",
+        "lint-staged": "^12.3.3",
+        "standard": "^16.0.4",
+        "supertest": "^4.0.2"
+    },
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "express": "^4.17.2",
+        "fast-glob": "^3.2.11",
+        "jsonwebtoken": "^8.5.1",
+        "mongodb": "^4.3.1",
+        "validator": "^13.7.0"
+    }
+}
